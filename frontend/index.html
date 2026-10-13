@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171717">
+  <title>Fashion Catalog | Catálogo de roupas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>FASHION<span class="brand-light"> CATALOG</span></span></a>
+    <span class="top-note">SEU CATÁLOGO DE MODA</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">COLEÇÃO / CATÁLOGO</p>
+        <h1>Peças que <em>expressam</em><br>seu estilo.</h1>
+        <p class="hero-copy">Organize suas roupas favoritas em um só lugar.</p>
+      </div>
+      <div class="hero-stamp" aria-hidden="true"><span>FC</span><small>STYLE<br>ARCHIVE</small></div>
+    </section>
+
+    <section class="toolbar">
+      <div>
+        <h2>Seu catálogo</h2>
+        <p id="counter">Carregando peças...</p>
+      </div>
+      <button class="button button-dark" id="newButton" type="button">＋ Adicionar peça</button>
+    </section>
+
+    <section class="form-panel hidden" id="formPanel">
+      <div class="form-heading">
+        <div><p class="eyebrow">DETALHES DA PEÇA</p><h2 id="formTitle">Adicionar roupa</h2></div>
+        <button id="closeForm" class="icon-button" type="button" aria-label="Fechar formulário">×</button>
+      </div>
+      <form id="clothingForm">
+        <input id="roupaId" type="hidden">
+        <div class="form-grid">
+          <label>Marca<input id="marca" name="marca" maxlength="80" required placeholder="Ex.: Nike"></label>
+          <label>Modelo<input id="modelo" name="modelo" maxlength="100" required placeholder="Ex.: Camiseta básica"></label>
+          <label>Preço (R$)<input id="preco" name="preco" type="number" min="0.01" step="0.01" required placeholder="129,90"></label>
+          <label class="wide">URL da foto<input id="foto" name="foto" type="url" required placeholder="https://site.com/imagem.jpg"></label>
+        </div>
+        <div class="form-actions"><button class="button button-light" id="cancelButton" type="button">Cancelar</button><button class="button button-dark" type="submit" id="saveButton">Salvar peça</button></div>
+      </form>
+    </section>
+
+    <div id="notice" class="notice hidden" role="status"></div>
+    <section id="clothingGrid" class="clothing-grid" aria-live="polite"></section>
+    <section id="emptyState" class="empty-state hidden"><div class="empty-icon">✳</div><h3>Seu catálogo começa aqui.</h3><p>Adicione sua primeira peça para ela aparecer nesta coleção.</p><button class="button button-dark" id="emptyAddButton" type="button">Adicionar primeira peça</button></section>
+    <section id="loading" class="loading">Carregando catálogo...</section>
+  </main>
+
+  <footer><span>FASHION CATALOG</span><span>Organize seu estilo, uma peça por vez.</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
